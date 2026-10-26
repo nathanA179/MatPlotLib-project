@@ -1,0 +1,25 @@
+About me: I wanted to learn more about data analytics and representation tools. Additionally, I merged my interest in golf into this project. Since completing this project, I've gained a better understanding of data analysis and its tools. 
+
+Key tools 
+
+. sqlite3
+
+. Pandas
+
+. matplotlib 
+
+. seaborn 
+
+. os 
+
+. random 
+
+The purpose of this project is to showcase tools like pandas, sqlite3, and graphing tools like seaborn and matplotlib in action. These tools helped me to analyze a dataset from the 2017 PGA Tour season. From this analysis, I hope to answer the question: What's more consequential in terms of winning, putting, or driving? 
+
+I started by taking the raw CSV and putting the data points into a SQL table. From that, I narrowed my data down to the most successful golfers that season and created a table (Top_Five_golfers_2017) inclusive of the more meaningful datapoints. Initially, I added a less successful golfer to the Top_Five_golfers_2017 to compare him to the other golfers. I then reevaluated; I thought the data would be more meaningful if I compared all other golfers to the best that season.
+
+The next step was to use the pandas describe() and corr() functions. With these functions, I could look at mean, std, quantiles, min, max, and median. The corr() function allowed me to see how meaningful the relationships were mathematically. After looking at the correlation coefficient, I utilized seaborn to plot a heatmap. (heatmap(aggregate).png and heatmap(Top5).png)
+
+Now, with this information, we can conclude whether driving or putting is more important for winning. Per heatmap(aggregate).png, there is a stronger relationship between strokes gained driving and winning. However, heatmap(Top5).png shows a stronger correlation between strokes gained putting and winning. Since aggregate looks at every golfer, not just the top five, I will consider that over the top five. Looking at the aggregate helps reduce skew, as we see when we look only at the top five. Additionally, looking at the means from pandas.py, we can see that for 'TOTAL_SG: PUTTING', 'AVG_Driving_DISTANCE', 'FAIRWAY_HIT_%', 'SG: OTT', 'AVG_CLUB_HEAD_SPEED', 'TOTAL_3_PUTTS ', the means are comparable. Thus, despite heatmap(Top5).png showing a much higher correlation between strokes gained putting and number of wins, upon interpreting the rest of the data, having a stronger driving ability carries more weight in terms of winning
+
+
